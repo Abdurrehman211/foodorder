@@ -1,0 +1,221 @@
+#Profile{
+    background: url('./images/backprofimg.png');
+    width: 100wv;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: auto auto;
+}
+.card221 {
+   
+    width: 390px;
+    height: 400px;
+    background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+    border-radius: 20px;
+    transition: all .3s;
+ margin-bottom: 20px ;
+   }
+   
+   .card2 {
+    width: 390px;
+    height: 400px;
+    background-color: #808080;
+    transition: all .2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: stretch;
+    gap: 11px;
+   }
+   
+   .card2:hover {
+    transform: scale(0.98);
+    border-radius: 20px;
+   }
+   
+   .card221:hover {
+    box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+   }
+   #USerpic{
+    width: 100px;
+   }
+ 
+   .profile h1{
+    color: white;
+    font-size: 5rem;
+    margin: auto auto;
+   }
+   .Display{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   }
+/* From Uiverse.io by DavidTM96 */ 
+.form {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    font-family: inherit;
+    gap: 10px;
+    padding-inline: 2em;
+    padding-bottom: 0.4em;
+    background-color: #171717;
+    border-radius: 20px;
+  }
+  
+  .form-heading {
+    text-align: center;
+    margin: 2em;
+    color: #64ffda;
+    font-size: 1.2em;
+    background-color: transparent;
+    align-self: center;
+  }
+  
+  .form-field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    border-radius: 10px;
+    padding: 0.6em;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: #171717;
+    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  }
+  
+  .input-field {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: #ccd6f6;
+    padding-inline: 1em;
+  }
+  
+  .sendMessage-btn {
+    cursor: pointer;
+    margin-bottom: 1em;
+    padding: 1em;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #64ffda;
+    font-weight: bold;
+    outline: 1px solid #64ffda;
+    transition: all ease-in-out 0.3s;
+}
+  
+  .sendMessage-btn:hover {
+    transition: all ease-in-out 0.3s;
+    background-color: #64ffda;
+    color: #000;
+    cursor: pointer;
+    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  }
+  
+  .form-card1 {
+    background-image: linear-gradient(163deg, #64ffda 0%, #64ffda 100%);
+    border-radius: 22px;
+    transition: all 0.3s;
+    width: 80%;
+  }
+  
+  .form-card1:hover {
+    box-shadow: 0px 0px 30px 1px rgba(100, 255, 218, 0.3);
+  }
+  
+  .form-card2 {
+    border-radius: 0;
+    transition: all 0.2s;
+  }
+  
+  .form-card2:hover {
+    transform: scale(0.98);
+    border-radius: 20px;
+  }
+  #details{
+    display: none;
+  }
+  #edit{
+    width: 60%;
+    height: 50px ;
+    font-size: 20px;
+    font-weight: 700;
+    word-spacing: 5%;
+  }
+  #Centered{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+  #UserPic
+  {
+     width: 200px;
+     height: 200px;
+      border-radius: 50%;
+
+       cursor: "pointer" }
+  @media screen and (max-width: 486px) {
+    #UserPic{
+      width: 95%;
+    height: 140px;
+    border-radius: 50%;
+    cursor: pointer;
+    }
+    .Display {
+      display: block;
+      justify-content: space-around;
+      align-items: center;
+  }
+  .card2 {
+    width: 100%;
+    height: 343px;
+    background-color: #808080;
+    transition: all .2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: stretch;
+    gap: 11px;
+    padding: 5px;
+}
+.card221 {
+  width: 90%;
+  height: fit-content;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 25px;
+  gap: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+  margin: auto auto;
+  margin-top: 61px;
+}
+.form-card1 {
+  background-image: linear-gradient(163deg, #64ffda 0%, #64ffda 100%);
+  border-radius: 22px;
+  transition: all 0.3s;
+  width: 90%;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  font-family: inherit;
+  gap: 10px;
+  padding-inline: 2em;
+  padding-bottom: 0.4em;
+  background-color: #171717;
+  border-radius: 20px;
+  width: 95%;
+  height: fit-content;
+}
+  }

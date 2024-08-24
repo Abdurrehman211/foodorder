@@ -1,0 +1,116 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  position: relative;
+  z-index: 2; /* Ensures the navbar itself is above other content */
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.nav-links li a:hover {
+  transition: 0.5s ease;
+  color: #000000;
+  border-radius: 20px;
+  background-color: #f5efef;
+}
+#home:hover{
+  transition: 0.5s ease;
+
+  color: #000000;
+  border-radius: 20px;
+  background-color: #f5efef;
+}
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.cta {
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.cta svg {
+  margin-left: 5px;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  height: 3px;
+  width: 25px;
+  background-color: white;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+/* Media query for max-width 800px */
+@media (max-width: 800px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #333;
+    width: 100%;
+    flex-direction: column;
+    text-align: right;
+    z-index: 999; /* Ensures the dropdown menu is above all other content */
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+    z-index: 3; /* Keeps the hamburger menu above other elements */
+  }
+}
+
+/* Additional media query for max-width 468px */
+@media (max-width: 468px) {
+  .logo {
+    font-size: 1.2rem; /* Reduce the logo size */
+  }
+
+  .nav-links li a {
+    padding: 8px; /* Reduce padding on links */
+  }
+
+  .cta {
+    padding: 8px 15px; /* Adjust the button padding */
+  }
+
+  .hamburger .bar {
+    width: 20px; /* Adjust the hamburger bar size */
+  }
+
+  .nav-links {
+    top: 50px; /* Adjust the top position for the dropdown */
+  }
+}

@@ -1,0 +1,92 @@
+#About{
+width: 100vw;
+height: 100vh;
+background:url('./images/backburger.jpg');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+.About{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    color: white;
+    width: 100%;
+}
+.About-child1{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    color: white;
+    text-align: justify;
+    background-color: rgba(0, 0, 0, 0.575);
+    border-radius: 20px;
+}
+.About-child1 p{
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+.About-child2{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    color: white;
+}
+.About h1{
+font-size: 6rem;
+background: rgb(253, 253, 253);
+background-repeat: no-repeat;
+background-position: center;
+color: transparent;
+background-clip: text;
+font-weight: bolder;
+letter-spacing: 1.1;
+font-family: Arial, Helvetica, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+@media screen and (max-width: 800px) {
+
+}
+@media screen and (max-width: 468px) {
+    .About h1 {
+        font-size: 4rem;
+        background: rgb(253, 253, 253);
+        background-repeat: no-repeat;
+        background-position: center;
+        color: transparent;
+        background-clip: text;
+        font-weight: bolder;
+        letter-spacing: 1.1;
+        font-family: Arial, Helvetica, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .About-child1 {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+        color: white;
+        text-align: justify;
+        background-color: rgba(0, 0, 0, 0.575);
+        border-radius: 20px;
+    }
+    .About-child1 p {
+        color: rgb(255, 255, 255);
+        font-size: medium;
+        font-weight: bolder;
+    }
+}
