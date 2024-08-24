@@ -7,9 +7,9 @@ const app = express();
 
 // Apply CORS globally
 app.use(cors({
-  origin: "https://foodorder-frontend-f1y8f3rb9-abdurrehman-s-projects.vercel.app",
+  origin: "https://foodorder-frontend-j5bylr321-abdurrehman-s-projects.vercel.app",  // Replace with your actual frontend URL
   methods: ["POST", "GET"],
-  credentials: true
+  credentials: true,
 }));
 
 // Middleware to parse JSON bodies
