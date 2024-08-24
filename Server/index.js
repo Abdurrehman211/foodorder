@@ -6,7 +6,7 @@ const BuyersModel = require("./models/Buyers");
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin:["https://deploy-mern-iqhq.vercel.app"],
+  origin:[""],
   methods: ["POST","GET"],
   credentials: true
 }));
