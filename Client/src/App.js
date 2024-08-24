@@ -10,9 +10,11 @@ import About from './Components/About';
 import Products from './Components/Products';
 import Contact from './Components/Contact';
 import Loader from './Components/Loader';
+import axios from 'axios';
 
 function App() {
   const [loading, setLoading] = useState(true);
+axios.defaults.withCredentials = true;
 
   useEffect(() => {
     // Simulate loading time, or use actual data loading here
