@@ -7,13 +7,19 @@ const app = express();
 
 // Apply CORS globally
 app.use(cors({
-  origin: "https://foodorder-frontend-j5bylr321-abdurrehman-s-projects.vercel.app",  // Replace with your actual frontend URL
-  methods: ["POST", "GET"],
-  credentials: true,
+  origin: "https://foodorder-frontend-j5bylr321-abdurrehman-s-projects.vercel.app", // Replace with your actual frontend URL
+  methods: ["POST", "GET", "OPTIONS"], // Allow OPTIONS method for preflight requests
+  allowedHeaders: ["Content-Type", "Authorization"], // Allow specific headers if necessary
+  credentials: true, // Allow credentials (e.g., cookies)
+  preflightContinue: false, // False to automatically handle OPTIONS responses
+  optionsSuccessStatus: 204 // Some legacy browsers (IE11, various SmartTVs) choke on 204
 }));
 
 // Middleware to parse JSON bodies
 app.use(express.json());
+
+// Handle OPTIONS requests globally
+app.options('*', cors());
 
 // Connect to MongoDB
 mongoose.connect("mongodb+srv://battlemani790:swistan%4012@buyers.vg5z41x.mongodb.net/Buyers")
@@ -51,7 +57,7 @@ app.post('/signup', (req, res) => {
   BuyersModel.create(req.body)
     .then(buyers => {
       console.log('Data stored:', buyers);
-      res.json(buyers);
+      res.status(201).json(buyers); // Use 201 for created resources
     })
     .catch(error => {
       console.error('Error storing data:', error);

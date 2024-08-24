@@ -13,38 +13,40 @@ function SignUp() {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
 axios.defaults.withCredentials = true;
-    const handleSignupSubmit = () => {
-        axios.post('https://foodorder-plum.vercel.app/signup', {
-            Firstname: firstname,
-            Lastname: lastname,
-            Email: email,
-            Password: password,
-            ConfirmPassword: confirmPassword
-        })
-        .then((response) => {
-            console.log(response);
-            Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: "Registration Successful",
-                showConfirmButton: false,
-                timer: 1500
-            });
-            navigate("/login");
-        })
-        .catch((error) => {
-            alert(`Error: ${error.response ? error.response.data.message : error.message}`);
-            console.error(error);
-            Swal.fire({
-                position: "top-end",
-                icon: "error",
-                title: "Registration Failed",
-                text: error.response?.data?.error || "Something went wrong",
-                showConfirmButton: true
-            });
+const handleSignupSubmit = () => {
+    axios.post('https://foodorder-plum.vercel.app/signup', {
+        Firstname: firstname,
+        Lastname: lastname,
+        Email: email,
+        Password: password,
+        ConfirmPassword: confirmPassword
+    }, {
+        withCredentials: true // If you're handling cookies/authentication tokens
+    })
+    .then((response) => {
+        console.log(response);
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Registration Successful",
+            showConfirmButton: false,
+            timer: 1500
         });
-    };
-    
+        navigate("/login");
+    })
+    .catch((error) => {
+        alert(`Error: ${error.response ? error.response.data.message : error.message}`);
+        console.error(error);
+        Swal.fire({
+            position: "top-end",
+            icon: "error",
+            title: "Registration Failed",
+            text: error.response?.data?.error || "Something went wrong",
+            showConfirmButton: true
+        });
+    });
+  };
+  
     const handlePassword = (e) => {
         e.preventDefault();
 
