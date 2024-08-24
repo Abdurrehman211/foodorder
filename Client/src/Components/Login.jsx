@@ -9,7 +9,7 @@ function Login() {
 const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const handleLogin = () => {
-        axios.post('http://localhost:3000/login', {
+        axios.post('https://foodorder-plum.vercel.app/login', {
             Email: email,
             Password: password
         })
