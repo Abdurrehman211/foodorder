@@ -14,7 +14,7 @@ function SignUp() {
     const [confirmPassword, setConfirmPassword] = useState("");
 axios.defaults.withCredentials = true;
 const handleSignupSubmit = () => {
-    axios.post('https://foodorder-plum.vercel.app/signup', {
+    axios.post('https://foodorder-plum.vercel.app/', {
         Firstname: firstname,
         Lastname: lastname,
         Email: email,
