@@ -5,11 +5,12 @@ const BuyersModel = require('./models/Buyers');
 
 const app = express();
 app.use(express.json());
-app.use(cors({
-  origin: ["https://foodorder-frontend.vercel.app"],  // Update with your frontend URL
+app.options('*', cors({
+  origin: "https://foodorder-frontend-f1y8f3rb9-abdurrehman-s-projects.vercel.app",
   methods: ["POST", "GET"],
   credentials: true
 }));
+
 
 mongoose.connect("mongodb+srv://battlemani790:swistan%4012@buyers.vg5z41x.mongodb.net/Buyers")
   .then(() => console.log('MongoDB connected'))
