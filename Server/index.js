@@ -7,7 +7,7 @@ const app = express();
 
 // Apply CORS globally
 app.use(cors({
-  origin: "https://foodorder-frontend-j5bylr321-abdurrehman-s-projects.vercel.app", // Replace with your actual frontend URL
+  origin: "http://localhost:3001/", // Replace with your actual frontend URL
   methods: ["POST", "GET", "OPTIONS"], // Allow OPTIONS method for preflight requests
   allowedHeaders: ["Content-Type", "Authorization"], // Allow specific headers if necessary
   credentials: true, // Allow credentials (e.g., cookies)
