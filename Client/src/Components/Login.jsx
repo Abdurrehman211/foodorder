@@ -9,7 +9,7 @@ function Login() {
 const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const handleLogin = () => {
-        axios.post('http://localhost:3001/login', {
+        axios.post('http://localhost:3000/login', {
             Email: email,
             Password: password
         })
@@ -45,7 +45,6 @@ const [email, setEmail] = useState("");
             });
         });
     };
-    
 
     const handleLoginSubmit = (e) => {
         e.preventDefault();

@@ -7,12 +7,10 @@ const app = express();
 
 // Apply CORS globally
 app.use(cors({
-  origin: "http://localhost:3001/", // Replace with your actual frontend URL
-  methods: ["POST", "GET", "OPTIONS"], // Allow OPTIONS method for preflight requests
-  allowedHeaders: ["Content-Type", "Authorization"], // Allow specific headers if necessary
+  origin: 'http://localhost:3001', // Allow requests from this origin
+  methods: ['POST', 'GET', 'OPTIONS'], // Allowed methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
   credentials: true, // Allow credentials (e.g., cookies)
-  preflightContinue: false, // False to automatically handle OPTIONS responses
-  optionsSuccessStatus: 204 // Some legacy browsers (IE11, various SmartTVs) choke on 204
 }));
 
 // Middleware to parse JSON bodies
@@ -20,6 +18,8 @@ app.use(express.json());
 
 // Handle OPTIONS requests globally
 app.options('*', cors());
+
+// Handle OPTIONS requests globally
 
 // Connect to MongoDB
 mongoose.connect("mongodb+srv://battlemani790:swistan%4012@buyers.vg5z41x.mongodb.net/Buyers")

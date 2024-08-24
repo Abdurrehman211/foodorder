@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import "./SignUp.css";
 import axios from "axios";
+import "./SignUp.css";
 
 function SignUp() {
     const navigate = useNavigate();
@@ -12,41 +12,41 @@ function SignUp() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
-axios.defaults.withCredentials = true;
-const handleSignupSubmit = () => {
-    axios.post('http://localhost:3001/signup', {
-        Firstname: firstname,
-        Lastname: lastname,
-        Email: email,
-        Password: password,
-        ConfirmPassword: confirmPassword
-    }, {
-        withCredentials: true // If you're handling cookies/authentication tokens
-    })
-    .then((response) => {
-        console.log(response);
-        Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "Registration Successful",
-            showConfirmButton: false,
-            timer: 1500
+
+    axios.defaults.withCredentials = true;
+
+    const handleSignupSubmit = () => {
+        axios.post('http://localhost:3000/signup', {
+            Firstname: firstname,
+            Lastname: lastname,
+            Email: email,
+            Password: password,
+            ConfirmPassword: confirmPassword
+        }, {
+            withCredentials: true
+        })
+        .then((response) => {
+            console.log(response);
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Registration Successful",
+                showConfirmButton: false,
+                timer: 1500
+            });
+            navigate("/login");
+        })
+        .catch((error) => {
+            Swal.fire({
+                position: "top-end",
+                icon: "error",
+                title: "Registration Failed",
+                text: error.response?.data?.error || "Something went wrong",
+                showConfirmButton: true
+            });
         });
-        navigate("/login");
-    })
-    .catch((error) => {
-        alert(`Error: ${error.response ? error.response.data.message : error.message}`);
-        console.error(error);
-        Swal.fire({
-            position: "top-end",
-            icon: "error",
-            title: "Registration Failed",
-            text: error.response?.data?.error || "Something went wrong",
-            showConfirmButton: true
-        });
-    });
-  };
-  
+    };
+
     const handlePassword = (e) => {
         e.preventDefault();
 
