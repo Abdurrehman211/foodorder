@@ -4,20 +4,31 @@ const mongoose = require('mongoose');
 const BuyersModel = require('./models/Buyers');
 
 const app = express();
-app.use(express.json());
-app.options('*', cors({
+
+// Apply CORS globally
+app.use(cors({
   origin: "https://foodorder-frontend-f1y8f3rb9-abdurrehman-s-projects.vercel.app",
   methods: ["POST", "GET"],
   credentials: true
 }));
 
+// Middleware to parse JSON bodies
+app.use(express.json());
 
+// Connect to MongoDB
 mongoose.connect("mongodb+srv://battlemani790:swistan%4012@buyers.vg5z41x.mongodb.net/Buyers")
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log('MongoDB connection error:', err));
 
+// Root route for testing
+app.get('/', (req, res) => {
+  res.send('Backend is running');
+});
+
+// Login route
 app.post('/login', (req, res) => {
   const { Email, Password } = req.body;
+
   BuyersModel.findOne({ Email: Email })
     .then(user => {
       if (!user) {
@@ -35,7 +46,8 @@ app.post('/login', (req, res) => {
     });
 });
 
-app.post("/signup", (req, res) => {
+// Signup route
+app.post('/signup', (req, res) => {
   BuyersModel.create(req.body)
     .then(buyers => {
       console.log('Data stored:', buyers);
@@ -45,6 +57,12 @@ app.post("/signup", (req, res) => {
       console.error('Error storing data:', error);
       res.status(500).json({ error: 'Failed to store data' });
     });
+});
+
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
 
 module.exports = app;
