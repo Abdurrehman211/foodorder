@@ -13,6 +13,17 @@ import Loader from './Components/Loader';
 import axios from 'axios';
 
 function App() {
+  
+  window.onload=() => axios.post('https://foodorder-plum.vercel.app/signup', {
+    Firstname: "Test",
+    Lastname: "User",
+    Email: "test@example.com",
+    Password: "password123",
+    ConfirmPassword: "password123"
+})
+.then(response => console.log(response))
+.catch(error => console.error("Error during signup:", error));
+
   const [loading, setLoading] = useState(true);
 axios.defaults.withCredentials = true;
 
