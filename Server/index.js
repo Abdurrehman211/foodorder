@@ -5,7 +5,11 @@ const BuyersModel = require("./models/Buyers");
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin:["https://deploy-mern-iqhq.vercel.app"],
+  methods: ["POST","GET"],
+  credentials: true
+}));
 
 mongoose.connect("mongodb+srv://battlemani790:swistan%4012@buyers.vg5z41x.mongodb.net/Buyers")
   .then(() => console.log('MongoDB connected'))
