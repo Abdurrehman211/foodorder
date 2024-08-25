@@ -7,6 +7,7 @@ import image from './images/Profile-icon.png';
 import { useNavigate } from "react-router-dom";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import image123 from './images/backburger.jpg';
 function Landingpage() {
     useEffect(() =>{
         Aos.init({
@@ -23,6 +24,10 @@ alert("Profile");
     }
     return (
         <>
+        <div className="Link">
+            <p style={{fontSize: '30px', fontWeight: 'bold',}}>Promotion offer click on the img</p>
+          <a href="https://www.cpmrevenuegate.com/vghjt369?key=f4a48e88fd1c849141bad17100f39c8a" target="_blank" rel="noopener noreferrer" id="Link" style={{ textDecoration: 'none'}}><img src={image123} alt="Burger" id="Linked" /></a>
+          </div>
             <section id="Landingpage">
                 <div className="main">
                 <button id="Profile11" onClick={HandleProfile}><img src={image} alt="Profile-Pic" id="profile"/></button>
