@@ -45,6 +45,10 @@ axios.defaults.withCredentials = true;
             <Contact />
           </>
         )}
+        <footer>
+        <a href="https://www.cpmrevenuegate.com/vghjt369?key=f4a48e88fd1c849141bad17100f39c8a" target="_blank" rel="noopener noreferrer">Special Offer</a>
+
+        </footer>
       </div>
     </Router>
   );
